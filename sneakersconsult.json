@@ -1,0 +1,188 @@
+{
+    "user": [
+        {
+            "id": 1,
+            "age": 25,
+            "size": 42,
+            "category": "running",
+            "budget": 10000
+        },
+        {
+            "id": 2,
+            "age": 25,
+            "size": 41,
+            "category": "casual",
+            "budget": 40000
+        },
+        {
+            "id": 3,
+            "age": 41,
+            "size": 43,
+            "category": "formal",
+            "budget": 30000
+        },
+        {
+            "id": 4,
+            "age": 20,
+            "size": 42,
+            "category": "running",
+            "budget": 100000000000
+        }
+    ],
+    "consultation": [
+        {
+            "user_id": 1,
+            "sneakers_id": 1,
+            "consult_notes": "http://dummyimage.com/1920x1080"
+        },
+        {
+            "user_id": 2,
+            "sneaker_id": 2,
+            "consult_notes": "http://dummyimage.com/1920x1080"
+        },
+        {
+            "user_id": 3,
+            "sneaker_id": "",
+            "consult_notes": "Tidak ada sneakers yang cocok dari segi size, category, ataupun budget"
+        },
+        {
+            "user_id": 1,
+            "sneaker_id": "",
+            "consult_notes": "Tidak ada sneakers yang cocok dari segi size, category, ataupun budget"
+        },
+        {
+            "user_id": 4,
+            "sneaker_id": "",
+            "consult_notes": "Tidak ada sneakers yang cocok dari segi size, category, ataupun budget"
+        },
+        {
+            "user_id": 4,
+            "sneaker_id": "",
+            "consult_notes": "Tidak ada sneakers yang cocok dari segi size, category, ataupun budget"
+        },
+        {
+            "user_id": 4,
+            "sneaker_id": 1,
+            "consult_notes": "http://dummyimage.com/1920x1080"
+        }
+    ],
+    "sneakers": [
+        {
+            "id": 1,
+            "name": "Jordan 1 Low Blue",
+            "details": [
+                {
+                    "size": 41,
+                    "stock": 10,
+                    "price": 430000
+                },
+                {
+                    "size": 42,
+                    "stock": 11,
+                    "price": 440000
+                },
+                {
+                    "size": 43,
+                    "stock": 12,
+                    "price": 450000
+                }
+            ],
+            "category": "running"
+        },
+        {
+            "id": 2,
+            "name": "Jordan 1 Low Orange",
+            "details": [
+                {
+                    "size": 41,
+                    "stock": 10,
+                    "price": 420000
+                },
+                {
+                    "size": 42,
+                    "stock": 11,
+                    "price": 420000
+                },
+                {
+                    "size": 43,
+                    "stock": 12,
+                    "price": 420000
+                }
+            ],
+            "category": "casual"
+        },
+        {
+            "id": 3,
+            "name": "Jordan 1 Low Blue",
+            "details": [
+                {
+                    "size": 41,
+                    "stock": 10,
+                    "price": 420000
+                },
+                {
+                    "size": 42,
+                    "stock": 11,
+                    "price": 420000
+                },
+                {
+                    "size": 43,
+                    "stock": 12,
+                    "price": 420000
+                }
+            ],
+            "category": "formal"
+        },
+        {
+            "id": 4,
+            "name": "Jordan 1 Low Red",
+            "details": [
+                {
+                    "size": 41,
+                    "stock": 10,
+                    "price": 420000
+                },
+                {
+                    "size": 42,
+                    "stock": 11,
+                    "price": 420000
+                },
+                {
+                    "size": 43,
+                    "stock": 12,
+                    "price": 420000
+                }
+            ],
+            "category": "running"
+        },
+        {
+            "id": 5,
+            "name": "Yeezy 350 Zebra",
+            "details": [
+                {
+                    "size": 40,
+                    "stock": 30,
+                    "price": 400000
+                }
+            ],
+            "category": "casual"
+        },
+        {
+            "id": 6,
+            "name": "NB 2002R Blue",
+            "details": [
+                {
+                    "size": 41,
+                    "stock": 8,
+                    "price": 69000
+                },
+                {
+                    "size": 42,
+                    "stock": 10,
+                    "price": 70000
+                }
+            ],
+            "category": "casual"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+RUN DOCKER:
+docker image build --tag imagegacor .
+docker container run --publish 8000:8000 --name containerbismillah imagegacor
+
+DOCKER AZURE (Container Registry)
+docker build -t <login_server>/<image_name>:<image_tag> .
+docker push <login_server>/<image_name>:<image_tag>
