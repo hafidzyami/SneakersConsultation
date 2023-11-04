@@ -14,6 +14,7 @@ class Consultation(BaseModel):
     id: int
     user_id: int
     sneakers_id: int
+    sneakers_name : str
     consult_url: str
     
 class Details(BaseModel):
@@ -157,7 +158,10 @@ async def update_sneaker(sneaker: Sneakers):
  
 @app.post('/consult/{user_id}')
 async def do_consult(user_id : int):
-    consultSneakers = []
+    count = 0
+    sneakers_id = 0
+    notes = 'Sneakers alternatif: '
+    sneakers_name = ''
     found = False
     for user in data['user']:
         if user['id'] == user_id:
@@ -173,21 +177,37 @@ async def do_consult(user_id : int):
         if(sneaker['category'] == found_user['category'] and sneaker['details']):
             for detail in sneaker['details']:
                 if(detail['size'] == found_user['size'] and detail['price'] <= found_user['budget']):
-                    consultSneakers.append(sneaker['id'])
-                    break;
+                    count += 1
+                    if(count >= 2):
+                        notes += sneaker['name'] + '(id:' +  str(sneaker['id']) + '), '
+                    else:
+                        sneakers_id += sneaker['id']
+                        sneakers_name += sneaker['name']
+                        
+            
     
-    if not consultSneakers:
+    if count == 0:
         consultData = {
         "user_id" : found_user['id'],
         "sneaker_id" : '',
-        "consult_notes" : "Tidak ada sneakers yang cocok dari segi size, category, ataupun budget"
+        "sneaker_name" : '',
+        "consult_notes" : "Tidak ada sneakers yang cocok dari segi size, category, ataupun budget Anda"
     }
+    elif count == 1:
+        consultData = {
+            "user_id" : found_user['id'],
+            "sneaker_id" : sneakers_id,
+            "sneaker_name" : sneakers_name,
+            "consult_notes" : "Tidak ada sneakers lain yang menjadi alternatif"
+        }
     else:
         consultData = {
             "user_id" : found_user['id'],
-            "sneaker_id" : consultSneakers[0],
-            "consult_notes" : "http://dummyimage.com/1920x1080"
+            "sneaker_id" : sneakers_id,
+            "sneaker_name" : sneakers_name,
+            "consult_notes" : notes
         }
+        
     
     data['consultation'].append(consultData)
     with open(json_filename,"w") as write_file:
@@ -197,3 +217,23 @@ async def do_consult(user_id : int):
     raise HTTPException(
         status_code=404, detail=f'sneaker not found'
     )
+    
+    
+@app.delete('/sneakers/{sneaker_id}')
+async def delete_sneaker(sneaker_id: int):
+
+	sneaker_found = False
+	for sneaker_idx, sneaker in enumerate(data['sneakers']):
+		if sneaker['id'] == sneaker_id:
+			sneaker_found = True
+			data['sneakers'].pop(sneaker_idx)
+			
+			with open(json_filename,"w") as write_file:
+				json.dump(data, write_file, indent=4)
+			return "updated"
+	
+	if not sneaker_found:
+		return "Sneaker ID not found."
+	raise HTTPException(
+		status_code=404, detail=f'sneaker not found'
+	)

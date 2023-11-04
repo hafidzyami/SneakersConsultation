@@ -12,7 +12,7 @@
             "age": 25,
             "size": 41,
             "category": "casual",
-            "budget": 40000
+            "budget": 40000000
         },
         {
             "id": 3,
@@ -32,38 +32,20 @@
     "consultation": [
         {
             "user_id": 1,
-            "sneakers_id": 1,
-            "consult_notes": "http://dummyimage.com/1920x1080"
-        },
-        {
-            "user_id": 2,
-            "sneaker_id": 2,
-            "consult_notes": "http://dummyimage.com/1920x1080"
-        },
-        {
-            "user_id": 3,
             "sneaker_id": "",
-            "consult_notes": "Tidak ada sneakers yang cocok dari segi size, category, ataupun budget"
-        },
-        {
-            "user_id": 1,
-            "sneaker_id": "",
-            "consult_notes": "Tidak ada sneakers yang cocok dari segi size, category, ataupun budget"
-        },
-        {
-            "user_id": 4,
-            "sneaker_id": "",
-            "consult_notes": "Tidak ada sneakers yang cocok dari segi size, category, ataupun budget"
-        },
-        {
-            "user_id": 4,
-            "sneaker_id": "",
-            "consult_notes": "Tidak ada sneakers yang cocok dari segi size, category, ataupun budget"
+            "consult_notes": "Tidak ada sneakers yang cocok dari segi size, category, ataupun budget Anda"
         },
         {
             "user_id": 4,
             "sneaker_id": 1,
-            "consult_notes": "http://dummyimage.com/1920x1080"
+            "sneaker_name": "Jordan 1 Low Blue",
+            "consult_notes": "Sneakers alternatif: Jordan 1 Low Red(id:4)"
+        },
+        {
+            "user_id": 2,
+            "sneaker_id": 6,
+            "sneaker_name": "NB 2002R Blue",
+            "consult_notes": "Tidak ada sneakers lain yang menjadi alternatif"
         }
     ],
     "sneakers": [
@@ -94,17 +76,17 @@
             "name": "Jordan 1 Low Orange",
             "details": [
                 {
-                    "size": 41,
+                    "size": 44,
                     "stock": 10,
                     "price": 420000
                 },
                 {
-                    "size": 42,
+                    "size": 45,
                     "stock": 11,
                     "price": 420000
                 },
                 {
-                    "size": 43,
+                    "size": 46,
                     "stock": 12,
                     "price": 420000
                 }
