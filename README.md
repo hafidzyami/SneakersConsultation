@@ -7,7 +7,6 @@ Tugas Besar II3160 - Teknologi Sistem Terintegrasi
 ```bash
 python -m venv env
 ```
-<br/>
 
 ## Installation
 
@@ -22,8 +21,6 @@ pip install fastapi uvicorn
 ```python
 uvicorn sneakersconsult:app --reload
 ```
-
-<br/>
 
 ## Using Docker
 
@@ -46,8 +43,6 @@ RUN pip install fastapi uvicorn <other packages>
 # Command to run the FastAPI server when the container starts
 CMD ["uvicorn", "<folder_name>", "--host", "0.0.0.0", "--port", "80"]
 ```
-
-<br/>
 
 ## Deploy in Microsoft Azure
 
