@@ -55,13 +55,16 @@ async def read_all_consultations():
 
 @app.get('/consult/{user_id}')
 async def read_consult(user_id: int):
+    consult_list = []
     for consult in data['consultation']:
         print(consult)
         if consult['user_id'] == user_id:
-            return consult
-    raise HTTPException(
-        status_code=404, detail=f'user not found'
-    )
+            consult_list.append(consult)
+    if not consult_list:
+        raise HTTPException(
+            status_code=404, detail=f'user not found'
+        )
+    return consult_list
  
 @app.post('/sneakers')
 async def add_sneakers(sneakers: Sneakers):
