@@ -42,7 +42,7 @@ WORKDIR /<folder_name>
 RUN pip install fastapi uvicorn <other packages>
 
 # Command to run the FastAPI server when the container starts
-CMD ["uvicorn", "<folder_name>", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "<file_name>", "--host", "0.0.0.0", "--port", "80"]
 ```
 
 ## Deploy in Microsoft Azure
